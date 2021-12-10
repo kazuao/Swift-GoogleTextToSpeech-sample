@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleTextToSpeech_translate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ym8-Fq-CP3">
+                                <rect key="frame" x="20" y="64" width="374" height="636"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">紅に染まったこの俺を慰めるやつはもういない
+もう二度と届かないこの思い
+閉ざされた愛に向かい叫び続ける</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V8j-8V-t87">
+                                <rect key="frame" x="20" y="720" width="374" height="31"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PO3-CQ-xJy">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="Female"/>
+                                            <segment title="Male"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzz-cz-Qg1">
+                                <rect key="frame" x="20" y="791" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tapSpeakButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yqm-v0-RgX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lzz-cz-Qg1" secondAttribute="bottom" constant="40" id="8ew-WF-vi6"/>
+                            <constraint firstItem="Lzz-cz-Qg1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BFU-96-Dnn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V8j-8V-t87" secondAttribute="trailing" constant="20" id="JP9-Tw-IU7"/>
+                            <constraint firstItem="V8j-8V-t87" firstAttribute="top" secondItem="Ym8-Fq-CP3" secondAttribute="bottom" constant="20" id="L4t-YQ-cAe"/>
+                            <constraint firstItem="V8j-8V-t87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ott-3m-DRq"/>
+                            <constraint firstItem="Ym8-Fq-CP3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aMr-TH-ijW"/>
+                            <constraint firstItem="Lzz-cz-Qg1" firstAttribute="top" secondItem="V8j-8V-t87" secondAttribute="bottom" constant="40" id="bSi-6v-wjF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lzz-cz-Qg1" secondAttribute="trailing" constant="20" id="d1U-Ce-sJB"/>
+                            <constraint firstItem="Ym8-Fq-CP3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fpW-08-D7l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ym8-Fq-CP3" secondAttribute="trailing" constant="20" id="gg7-Md-FYo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="speakButton" destination="Lzz-cz-Qg1" id="Fwl-Jq-dpN"/>
+                        <outlet property="textView" destination="Ym8-Fq-CP3" id="8GG-IZ-D0b"/>
+                        <outlet property="voiceGenderControl" destination="PO3-CQ-xJy" id="waq-L1-nWf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

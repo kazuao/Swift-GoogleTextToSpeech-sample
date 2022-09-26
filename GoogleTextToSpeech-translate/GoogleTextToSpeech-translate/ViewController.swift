@@ -47,6 +47,4 @@ class ViewController: UIViewController {
             self.speakButton.alpha = 1
         }
     }
-    
 }
-

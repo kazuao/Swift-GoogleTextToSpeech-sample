@@ -93,6 +93,8 @@ private extension SpeechService {
         ]
 
         let data = try! JSONSerialization.data(withJSONObject: params)
+        print("request:", String(describing: try! JSONSerialization.jsonObject(with: data, options: .allowFragments)))
+
         return data
     }
 
